@@ -1,0 +1,122 @@
+/* 
+div, a, h2 {
+    border-color: black;
+    border-width: 1px;
+    border-style:solid ;
+}
+ */
+.w_before {
+    transition: all 1s;
+}
+
+.w_after {
+    transform: scale(1.05);
+    transition: all 0.5s;
+}
+
+.totopfirstpage {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 1s;
+}
+
+.totopscroll {
+    opacity: 1;
+    transition: all 1s;
+}
+
+.toTopButton:hover {
+    transition: all 0.5s;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.img_transition_on {
+    /* opacity: 1;
+    transition: all 1s;
+    transition-timing-function: ease-in-out; */
+    animation-name: img_tran_animation_on;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+
+.img_transition_off {
+    opacity: 1;
+    transition: all 1s;
+    transition-timing-function: ease-in-out;
+}
+
+@keyframes img_tran_animation_on {
+    from {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.buttons_sns:hover {
+    transition: all 0.5s;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.test111:after {
+    background-color: blue;
+}
+
+.myName {
+
+    animation-name: opacityChanger;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+/* 캐러셀 */
+.swiper-button-prev, .swiper-button-next {
+    color: rgb(26, 32, 44);
+}
+
+.swiper-pagination-bullet-active {
+    background-color: rgb(26, 32, 44);
+}
+
+
+
+@keyframes opacityChanger {
+    0% {
+
+        opacity: 0;
+    }
+
+    33% {
+        opacity: 1;
+    }
+
+    66% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* .show {
+    height: 7rem;
+    opacity: 1;
+    transition-property: height, opacity;
+    transition-duration: .5s, .5s;
+    transition-delay: 0s, .25s;
+    transition-timing-function: ease-in-out, ease-in-out;
+
+}
+
+.hide {
+    height: 0;
+    opacity: 0;
+    transition-property: height, opacity;
+    transition-duration: .5s, .5s;
+    transition-delay: .15s, .0s;
+    transition-timing-function: ease-in-out, ease-in-out;
+} */
