@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/JK_Portfolio_v2/static/css/main.b0314e75.css",
-    "main.js": "/JK_Portfolio_v2/static/js/main.e09e2e87.js",
+    "main.js": "/JK_Portfolio_v2/static/js/main.8f5dc346.js",
     "static/js/377.44009908.chunk.js": "/JK_Portfolio_v2/static/js/377.44009908.chunk.js",
     "static/media/vl_landing.gif": "/JK_Portfolio_v2/static/media/vl_landing.c8d2a6548f55202bba6a.gif",
     "static/media/PIC_JunhyungKim.jpg": "/JK_Portfolio_v2/static/media/PIC_JunhyungKim.53e074eae05d988a1f3a.jpg",
@@ -30,11 +30,11 @@
     "static/media/open-sans-greek-ext-700-normal.woff2": "/JK_Portfolio_v2/static/media/open-sans-greek-ext-700-normal.6ec764fe61947b88ec49.woff2",
     "index.html": "/JK_Portfolio_v2/index.html",
     "main.b0314e75.css.map": "/JK_Portfolio_v2/static/css/main.b0314e75.css.map",
-    "main.e09e2e87.js.map": "/JK_Portfolio_v2/static/js/main.e09e2e87.js.map",
+    "main.8f5dc346.js.map": "/JK_Portfolio_v2/static/js/main.8f5dc346.js.map",
     "377.44009908.chunk.js.map": "/JK_Portfolio_v2/static/js/377.44009908.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b0314e75.css",
-    "static/js/main.e09e2e87.js"
+    "static/js/main.8f5dc346.js"
   ]
 }
