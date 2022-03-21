@@ -18,25 +18,22 @@ import {
     Tag,
 } from '@chakra-ui/react';
 
-import { Link as ReactRouter } from 'react-router-dom';
+import NextLink from 'next/link';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faJsSquare, faReact, faNodeJs, faHtml5, faCss3Alt } from '@fortawesome/free-brands-svg-icons';
 
-import testImg1 from '../images/portfolio/vl_landing_01.jpg';
-import testImg from '../images/portfolio/vl_landing.gif';
-import hairSalon from '../images/portfolio/hairSalon.jpg'
-// import testVideo from '/videos/vl_landing.mp4';
-// import testImg from '../images/1.jpeg';
-
 const Projects = forwardRef((props, ref) => {
-    const { onHomeClick, setCurrentPage, handlePageTop } = props;
+    const { onHomeClick, setCurrentPage, setRoutePage, handlePageTop } = props;
 
     const [p1Switch, setP1Switch] = useState(false);
     const [p2Switch, setP2Switch] = useState(false);
 
+    const testImg = '/images/portfolio/vl_landing.gif';
+    const hairSalon = '/images/portfolio/hairsalon.jpg';
+
     const handleViewProject = (e) => {
-        setCurrentPage(e);
+        setCurrentPage(e);        
         handlePageTop();
     }
 
@@ -95,7 +92,7 @@ const Projects = forwardRef((props, ref) => {
                                 className="portfolio_items"
                             >
                                 <Box h={{ base: '200px', md: "420px", lg: '350px' }} zIndex='0'>
-                                    <Image w="full" h="full" src={p1Switch ? testImg : testImg1}
+                                    <Image w="full" h="full" src={p1Switch ? testImg : '/images/portfolio/vl_landing_01.jpg'}
                                         objectFit="cover"
                                         className={p1Switch ? 'img_transition_on' : 'img_transition_off'}
 
@@ -104,7 +101,7 @@ const Projects = forwardRef((props, ref) => {
                                 <Flex
                                     direction="column"
                                     // h="full"
-                                    h={{ base: '380px', md:'300px', xl:'350px' }}
+                                    h={{ base: '380px', md: '300px', xl: '350px' }}
                                     bg="white"
                                     textAlign="left"
                                     p={5}
@@ -152,12 +149,12 @@ const Projects = forwardRef((props, ref) => {
                                             alignItems='center'
                                         >
                                             <Spacer />
-                                            <ReactRouter to="/works/">
+                                            <NextLink href='/projects/vl_landing' scroll={false} passHref>
                                                 <Button colorScheme='blue' bgColor='blue.900' m={1} onClick={(e) => { handleViewProject(1) }} className='buttons'>
                                                     {buttonName}
-
                                                 </Button>
-                                            </ReactRouter>
+                                            </NextLink>
+
                                         </Flex>
                                     </Flex>
                                 </Flex>
@@ -186,12 +183,14 @@ const Projects = forwardRef((props, ref) => {
                                 className="portfolio_items"
                             >
                                 <Box h={{ base: '200px', md: "420px", lg: '350px' }} zIndex='0' overflow='hidden'>
-                                    <Image w='full' h="full" src={hairSalon} objectFit="cover" />
+                                    <Image w='full' h="full"
+                                        src={hairSalon}
+                                        objectFit="cover" />
                                 </Box>
                                 <Flex
                                     direction="column"
                                     // h="full"
-                                    h={{ base: '380px', md:'300px', xl:'350px' }}
+                                    h={{ base: '380px', md: '300px', xl: '350px' }}
                                     bg="white"
                                     textAlign="left"
                                     p={5}
@@ -239,11 +238,11 @@ const Projects = forwardRef((props, ref) => {
                                             alignItems='center'
                                         >
                                             <Spacer />
-                                            <ReactRouter to="/works/">
-                                                <Button colorScheme='blue' bgColor='blue.900' m={1} disabled>
-                                                    In Progress..
-                                                </Button>
-                                            </ReactRouter>
+                                            {/* <NextRouter to="/works/"> */}
+                                            <Button colorScheme='blue' bgColor='blue.900' m={1} disabled>
+                                                In Progress..
+                                            </Button>
+                                            {/* </NextRouter> */}
                                         </Flex>
                                     </Flex>
                                 </Flex>
@@ -287,9 +286,9 @@ const Projects = forwardRef((props, ref) => {
                                     <Spacer />
                                     <Flex h='full' direction='column' onClick={(e) => { onHomeClick() }} >
                                         <Spacer />
-                                        <ReactRouter to='/works/'>
+                                        <NextRouter to='/works/'>
                                             <Button colorScheme='teal' m={1}>{buttonName}</Button>
-                                        </ReactRouter>
+                                        </NextRouter>
                                     </Flex>
                                 </Flex>
                             </Flex>
@@ -331,9 +330,9 @@ const Projects = forwardRef((props, ref) => {
                                     <Spacer />
                                     <Flex h='full' direction='column' onClick={(e) => { onHomeClick() }} >
                                         <Spacer />
-                                        <ReactRouter to='/works/'>
+                                        <NextRouter to='/works/'>
                                             <Button colorScheme='teal' m={1}>{buttonName}</Button>
-                                        </ReactRouter>
+                                        </NextRouter>
                                     </Flex>
                                 </Flex>
                             </Flex>
@@ -374,9 +373,9 @@ const Projects = forwardRef((props, ref) => {
                                     <Spacer />
                                     <Flex h='full' direction='column' onClick={(e) => { onHomeClick() }} >
                                         <Spacer />
-                                        <ReactRouter to='/works/'>
+                                        <NextRouter to='/works/'>
                                             <Button colorScheme='teal' m={1}>{buttonName}</Button>
-                                        </ReactRouter>
+                                        </NextRouter>
                                     </Flex>
                                 </Flex>
                             </Flex>
@@ -387,5 +386,7 @@ const Projects = forwardRef((props, ref) => {
         </Container >
     );
 });
+
+Projects.displayName = 'Projects';
 
 export default Projects;

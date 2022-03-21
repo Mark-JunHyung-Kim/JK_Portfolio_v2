@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Flex, Box, Text, Heading, Image, Spacer, Grid, Center, Button } from '@chakra-ui/react';
+import { Container, Flex, Box, Text, Heading, Spacer, Image, Grid, Center, Button } from '@chakra-ui/react';
 
-import myPic from '../images/PIC_JunhyungKim.jpg';
+// next에서 임포팅 이렇게하면 에러남. 그냥 바로 경로로 불러옴
+// import myPic from '../../public/images/PIC_JunhyungKim.jpg';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import {  } from '@fortawesome/free-solid-svg-icons';
-import { faJsSquare, faReact, faNodeJs, faHtml5, faCss3Alt, faJava } from '@fortawesome/free-brands-svg-icons';
+import { faJsSquare, faReact, faNodeJs, faHtml5, faCss3Alt, } from '@fortawesome/free-brands-svg-icons';
 
 const Intro = () => {
+
+    const myPic = '/images/PIC_JunhyungKim.jpg';
+    const nextJsIcon = 'images/next-js.svg';
 
     const [myName, setMyName] = useState(false);
 
@@ -22,7 +26,7 @@ const Intro = () => {
         return () => clearInterval(iconChanger)
     }, []);
     return (
-        <Container maxW="100vw" h='full' pt="80px" justifyContent='center' centerContent>
+        <Container maxW="100vw" h='full' pt="80px" justifyContent='center' centerContent>            
             <Flex
                 maxW='container.lg'
                 direction="column"
@@ -58,7 +62,7 @@ const Intro = () => {
                             mt={5}
                             p={2}
                         >
-                            <a href='https://drive.google.com/file/d/1azGsN2aNb57JGb4Pbe-vGpx-1KClV5hq/view?usp=sharing' target='_blank'>
+                            <a href='https://drive.google.com/file/d/1bIV2OG029sOY287XIAajI-S0-BUDfI-O/view?usp=sharing' target='_blank'  rel='noreferrer'>
                                 <Button size='sm' borderRadius="full" variant='solid' colorScheme='blue'>{viewResume}</Button>
                             </a>
                         </Box>
@@ -71,7 +75,7 @@ const Intro = () => {
                             #Passionate #Creative #FullStack_WebDeveloper
                         </Text>
                         <Heading w={{ base: 'full', sm: '80%' }} size="xl" pb={5}>
-                            Hello World!<br />I'm <span className='myName'>
+                            Hello World!<br />I&apos;m <span className='myName'>
                                 {myName ? 'Junhyung Kim!' : 'Mark Kim!'}</span>
                         </Heading>
                         <Text w={{ base: 'full' }} fontSize={{ lg: 'sm', xl: "md" }} overflowWrap='break-word' pb={{ base: 5, lg: 10 }}>
@@ -108,6 +112,10 @@ const Intro = () => {
                                     <Flex>
                                         <Center width='25px'><FontAwesomeIcon icon={faNodeJs} fontSize='1.5em' /></Center>
                                         <Text ml={2}>Node.js</Text>
+                                    </Flex>
+                                    <Flex>
+                                        <Center width='25px'><Image src={nextJsIcon}/></Center>
+                                        <Text ml={2}>Next.js</Text>
                                     </Flex>
                                     <Flex>
                                         <Center width='25px'><FontAwesomeIcon icon={faJsSquare} fontSize='1.5em' /></Center>
