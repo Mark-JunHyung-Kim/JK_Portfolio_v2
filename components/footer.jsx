@@ -22,7 +22,7 @@ const Footer = () => {
         <Container maxW="100vw" h="150px" justify="center" align="center" boxShadow='inner'>
             <Flex maxW="container.xl" h="full" direction="column" justify="center">
                 <HStack justify="center" h='full' pt={5} spacing={4}>
-                    <a href='https://www.instagram.com/mark_gray_kim/' target='_blank'>
+                    <a href='https://www.instagram.com/mark_gray_kim/' target='_blank' rel='noreferrer'>
                         <Button
                             borderRadius="full"
                             w="50px"
@@ -37,7 +37,7 @@ const Footer = () => {
                             <FontAwesomeIcon icon={faInstagram} />
                         </Button>
                     </a>
-                    <a href='https://www.linkedin.com/in/markgraykim/' target='_blank'>
+                    <a href='https://www.linkedin.com/in/markgraykim/' target='_blank' rel='noreferrer'>
                         <Button
                             borderRadius="full"
                             w="50px"
@@ -52,7 +52,7 @@ const Footer = () => {
                             <FontAwesomeIcon icon={faLinkedinIn} />
                         </Button>
                     </a>
-                    <a href='https://github.com/Mark-JunHyung-Kim' target='_blank'>
+                    <a href='https://github.com/Mark-JunHyung-Kim' target='_blank' rel='noreferrer'>
                         <Button
                             borderRadius="full"
                             w="50px"

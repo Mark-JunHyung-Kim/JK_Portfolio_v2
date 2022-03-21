@@ -102,21 +102,6 @@ div, a, h2 {
     }
 }
 
-/* .show {
-    height: 7rem;
-    opacity: 1;
-    transition-property: height, opacity;
-    transition-duration: .5s, .5s;
-    transition-delay: 0s, .25s;
-    transition-timing-function: ease-in-out, ease-in-out;
-
+.logoName {
+    cursor: pointer;
 }
-
-.hide {
-    height: 0;
-    opacity: 0;
-    transition-property: height, opacity;
-    transition-duration: .5s, .5s;
-    transition-delay: .15s, .0s;
-    transition-timing-function: ease-in-out, ease-in-out;
-} */

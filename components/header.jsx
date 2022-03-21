@@ -6,15 +6,13 @@ import {
     Text,
     Spacer,
     Box,
-    Link,
     Center,
     Button,
     Collapse,
     IconButton,
-    useDisclosure,
 } from '@chakra-ui/react';
 
-import { Link as ReactRouter } from 'react-router-dom';
+import NextLink from 'next/link';
 
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 
@@ -29,9 +27,10 @@ const Header = forwardRef((props, ref) => {
         handleCurrentPage,
         projects_ref,
         contact_ref,
-        vl_landing_ref,
         currentPage,
         setCurrentPage,
+        routePage,
+        setRoutePage
     } = props;
 
     const [headerStatus, setHeaderStatus] = useState(false);
@@ -53,7 +52,7 @@ const Header = forwardRef((props, ref) => {
         }
 
         // 기본 home(인트로) 있을 때
-        if (vl_landing_ref.current === null) {
+        if (routePage == 0) {
             if (myScroll >= 0 && myScroll < projects_top) {
                 setCurrentPage(0);
             } else if (myScroll >= projects_top && myScroll < contact_top) {
@@ -77,7 +76,7 @@ const Header = forwardRef((props, ref) => {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, []);
+    }, [routePage]);
 
     const appName = '<m.kim/>';
     return (
@@ -94,6 +93,7 @@ const Header = forwardRef((props, ref) => {
             zIndex={2}
         >
             {/* top button area */}
+
             <Box
                 pos='fixed'
                 right={['2vw', '4vw', '4vw', '2vw']}
@@ -126,17 +126,21 @@ const Header = forwardRef((props, ref) => {
             >
                 <Flex w="full" h='full' direction="row" px={{ lg: 5, xl: 0 }} py={{ base: 0, sm: 4 }} ref={ref}>
                     <Center px="5">
-                        <Heading
-                            as={ReactRouter}
-                            to="/"
-                            size="md"
-                            textTransform="uppercase"
-                            onClick={() => {
-                                handleCurrentPage(0);
-                            }}
-                        >
-                            {appName}
-                        </Heading>
+                        <NextLink href='/' scroll={false} passHref>
+                            <Heading
+                                size="md"
+                                className='logoName'
+                                textTransform="uppercase"
+                                onClick={() => {
+                                    handleCurrentPage(0);
+                                    if (routePage != 0) {
+                                        setCurrentPage(0);
+                                    }
+                                }}
+                            >
+                                {appName}
+                            </Heading>
+                        </NextLink>
                     </Center>
                     <Spacer />
                     <Center
@@ -145,23 +149,26 @@ const Header = forwardRef((props, ref) => {
                         fontWeight="semibold"
                         display={{ base: 'none', sm: 'flex' }}
                     >
+                        <NextLink href='/' scroll={false} passHref >
+                            <Text
+                                w="fit-content"
+                                px={2}
+                                m={2}
+                                onClick={() => {
+                                    handleCurrentPage(0);
+                                    if (routePage != 0) {
+                                        setCurrentPage(0);
+                                    }
+                                }}
+                                textDecoration={currentPage === 0 ? 'underline' : 'none'}
+                                fontWeight={currentPage === 0 ? 'bold' : 'normal'}
+                                cursor="pointer"
+                            >
+                                HOME
+                            </Text>
+                        </NextLink>
                         <Text
-                            w="fit-content"
-                            px={2}
-                            m={2}
-                            as={ReactRouter}
-                            to="/"
-                            onClick={() => {
-                                handleCurrentPage(0);
-                            }}
-                            textDecoration={currentPage === 0 ? 'underline' : 'none'}
-                            fontWeight={currentPage === 0 ? 'bold' : 'normal'}
-                            cursor="pointer"
-                        >
-                            HOME
-                        </Text>
-                        <Text
-                            // as={ReactRouter}
+                            // as={NextRouter}
                             // to="/works"
                             w="fit-content"
                             onClick={() => {
@@ -200,6 +207,8 @@ const Header = forwardRef((props, ref) => {
                         </IconButton>
                     </Center>
                 </Flex>
+
+                {/* 햄버거메뉴 */}
                 <Collapse in={isOpen} animateOpacity>
                     <Flex
                         w="full"
@@ -209,23 +218,26 @@ const Header = forwardRef((props, ref) => {
                         display={{ base: 'flex', sm: 'none' }}
                         pt={{ base: 2, sm: 5 }}
                     >
+                        <NextLink href='/' scroll={false} passHref >
+                            <Text
+                                w="fit-content"
+                                px={2}
+                                m={2}
+                                onClick={() => {
+                                    handleCurrentPage(0);
+                                    if (routePage != 0) {
+                                        setCurrentPage(0);
+                                    }
+                                }}
+                                textDecoration={currentPage === 0 ? 'underline' : 'none'}
+                                fontWeight={currentPage === 0 ? 'bold' : 'normal'}
+                                cursor="pointer"
+                            >
+                                HOME
+                            </Text>
+                        </NextLink>
                         <Text
-                            w="fit-content"
-                            px={2}
-                            m={2}
-                            as={ReactRouter}
-                            to="/"
-                            onClick={() => {
-                                handleCurrentPage(0);
-                            }}
-                            textDecoration={currentPage === 0 ? 'underline' : 'none'}
-                            fontWeight={currentPage === 0 ? 'bold' : 'normal'}
-                            cursor="pointer"
-                        >
-                            HOME
-                        </Text>
-                        <Text
-                            // as={ReactRouter}
+                            // as={NextRouter}
                             // to="/works"
                             w="fit-content"
                             onClick={() => {
@@ -258,5 +270,7 @@ const Header = forwardRef((props, ref) => {
         </Container>
     );
 });
+
+Header.displayName = 'Header';
 
 export default Header;

@@ -1,24 +1,26 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ChakraProvider, useDisclosure } from '@chakra-ui/react';
-import { Routes, Route } from 'react-router-dom';
+import { Link } from 'next/link';
+import { useRouter } from 'next/router';
+import { ChakraProvider, extendTheme, useDisclosure } from '@chakra-ui/react';
 
-// import { ColorModeSwitcher } from './ColorModeSwitcher';
+import theme from '../styles';
+import '../styles/styles.css';
 
-// Import components
-import Header from './components/header';
-import Intro from './components/intro';
-import Projects from './components/projects';
-import Contact from './components/contact';
-import Footer from './components/footer';
+import '@fontsource/raleway/400.css';
+import '@fontsource/open-sans/700.css';
 
-// Import portfolio works
-import Vl_landing from './components/portfolios/vl_landing';
+import Header from '../components/header';
+import Projects from '../components/projects';
+import Contact from '../components/contact';
+import Footer from '../components/footer';
 
-import theme from './theme';
-import './theme/styles.css';
+import { AnimatePresence, motion } from 'framer-motion';
 
-function App() {
+function MyApp({ Component, pageProps }) {
   const [currentPage, setCurrentPage] = useState(0);
+  const [routePage, setRoutePage] = useState();
+
+  const [inProp, setInProp] = useState(false);
 
   const header_ref = useRef(null);
   const projects_ref = useRef(null);
@@ -35,7 +37,7 @@ function App() {
     });
   };
 
-  const handleCurrentPage = e => {
+  const handleCurrentPage = (e) => {
     const headerHeight = header_ref.current.clientHeight;
     const projects = projects_ref.current.offsetTop - headerHeight;
     const contact = contact_ref.current.offsetTop - headerHeight;
@@ -44,7 +46,7 @@ function App() {
       window.scrollTo({
         top: 0,
         behavior: 'smooth',
-      });
+      });      
     } else if (e === 1) {
       window.scrollTo({
         top: projects,
@@ -74,51 +76,34 @@ function App() {
         currentPage={currentPage}
         handleCurrentPage={handleCurrentPage}
         setCurrentPage={setCurrentPage}
+        routePage={routePage}
+        setRoutePage={setRoutePage}
         handlePageTop={handlePageTop}
         ref={header_ref}
       />
-      <Routes>
-        <Route
-          path="/works/"
-          element={
-            <Vl_landing
-              handleCurrentPage={handleCurrentPage}
-              ref={vl_landing_ref}
-            />
-          }
-        ></Route>
-        <Route exact path="/" element={<Intro />}></Route>
-      </Routes>
+
+      {/* 이게 새로고쳐지는페이지인듯. 여기에 그냥 props보내는식으로 보내면 되는거같음 */}
+      {/* 트랜지션 효과 추가 */}
+      <AnimatePresence exitBeforeEnter>
+        <Component
+          {...pageProps}
+          setRoutePage={setRoutePage}
+          handleCurrentPage={handleCurrentPage}
+          setCurrentPage={setCurrentPage}
+          setInProp={setInProp}
+        />
+      </AnimatePresence>
+
       <Projects
         handlePageTop={handlePageTop}
         setCurrentPage={setCurrentPage}
+        setRoutePage={setRoutePage}
         ref={projects_ref}
       />
       <Contact ref={contact_ref} />
       <Footer />
-
-      {/*  <Box textAlign="center" fontSize="xl" className="main">
-        <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
-          <VStack spacing={8}>
-            <Logo h="40vmin" pointerEvents="none" />
-            <Text backgroundColor="black">
-              Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
-            </Text>
-            <Link
-              color="teal.500"
-              href="https://chakra-ui.com"
-              fontSize="2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn Chakra
-            </Link>
-          </VStack>
-        </Grid>
-      </Box> */}
     </ChakraProvider>
   );
 }
 
-export default App;
+export default MyApp;
