@@ -175,32 +175,32 @@ const Vl_landing = forwardRef((props, ref) => {
                                             fontSize={{ lg: 'md', xl: 'md' }}
                                         >
                                             <Flex>
-                                                <Center width="25px">
-                                                    <FontAwesomeIcon icon={faReact} fontSize="1.5em" />
+                                                <Center width="25px" height="25px">
+                                                    <FontAwesomeIcon icon={faReact} height='25px' />
                                                 </Center>
                                                 <Text ml={2}>React</Text>
                                             </Flex>
                                             <Flex>
-                                                <Center width="25px">
-                                                    <FontAwesomeIcon icon={faNodeJs} fontSize="1.5em" />
+                                                <Center width="25px" height="25px">
+                                                    <FontAwesomeIcon icon={faNodeJs} height='25px' />
                                                 </Center>
                                                 <Text ml={2}>Node.js</Text>
                                             </Flex>
                                             <Flex>
-                                                <Center width="25px">
-                                                    <FontAwesomeIcon icon={faJsSquare} fontSize="1.5em" />
+                                                <Center width="25px" height="25px">
+                                                    <FontAwesomeIcon icon={faJsSquare} height='25px' />
                                                 </Center>
                                                 <Text ml={2}>JavaSciprt</Text>
                                             </Flex>
                                             <Flex>
-                                                <Center width="25px">
-                                                    <FontAwesomeIcon icon={faHtml5} fontSize="1.5em" />
+                                                <Center width="25px" height="25px">
+                                                    <FontAwesomeIcon icon={faHtml5} height='25px' />
                                                 </Center>
                                                 <Text ml={2}>HTML5</Text>
                                             </Flex>
                                             <Flex>
-                                                <Center width="25px">
-                                                    <FontAwesomeIcon icon={faCss3Alt} fontSize="1.5em" />
+                                                <Center width="25px" height="25px">
+                                                    <FontAwesomeIcon icon={faCss3Alt} height='25px' />
                                                 </Center>
                                                 <Text ml={2}>CSS3</Text>
                                             </Flex>

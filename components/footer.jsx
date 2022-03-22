@@ -27,14 +27,16 @@ const Footer = () => {
                             borderRadius="full"
                             w="50px"
                             h="50px"
+                            p={0}
                             borderWidth='2px'
                             borderColor='blackAlpha.700'
                             colorScheme='whiteAlpha'
                             color="blackAlpha.700"
-                            fontSize='3xl'
                             className='buttons_sns'
                         >
-                            <FontAwesomeIcon icon={faInstagram} />
+                            <Center>
+                                <FontAwesomeIcon icon={faInstagram} width='25px' height='25px' />
+                            </Center>
                         </Button>
                     </a>
                     <a href='https://www.linkedin.com/in/markgraykim/' target='_blank' rel='noreferrer'>
@@ -42,14 +44,16 @@ const Footer = () => {
                             borderRadius="full"
                             w="50px"
                             h="50px"
+                            p={0}
                             borderWidth='2px'
                             borderColor='blackAlpha.700'
                             colorScheme='whiteAlpha'
                             color="blackAlpha.700"
-                            fontSize='2xl'
                             className='buttons_sns'
                         >
-                            <FontAwesomeIcon icon={faLinkedinIn} />
+                            <Center>
+                                <FontAwesomeIcon icon={faLinkedinIn} width='22px' height='25px' />
+                            </Center>
                         </Button>
                     </a>
                     <a href='https://github.com/Mark-JunHyung-Kim' target='_blank' rel='noreferrer'>
@@ -57,14 +61,16 @@ const Footer = () => {
                             borderRadius="full"
                             w="50px"
                             h="50px"
+                            p={0}
                             borderWidth='2px'
                             borderColor='blackAlpha.700'
                             colorScheme='whiteAlpha'
                             color="blackAlpha.700"
-                            fontSize='3xl'
                             className='buttons_sns'
                         >
-                            <FontAwesomeIcon icon={faGithub} />
+                            <Center>
+                                <FontAwesomeIcon icon={faGithub} width='25px' height='25px' />
+                            </Center>
                         </Button>
                     </a>
 
