@@ -62,7 +62,7 @@ const Intro = () => {
                             mt={5}
                             p={2}
                         >
-                            <a href='https://drive.google.com/file/d/1bIV2OG029sOY287XIAajI-S0-BUDfI-O/view?usp=sharing' target='_blank'  rel='noreferrer'>
+                            <a href='https://drive.google.com/file/d/1hMLx9vMp7rHIh3RPFdhp0NypF0AKYpIM/view?usp=sharing' target='_blank'  rel='noreferrer'>
                                 <Button size='sm' borderRadius="full" variant='solid' colorScheme='blue'>{viewResume}</Button>
                             </a>
                         </Box>
@@ -106,27 +106,27 @@ const Intro = () => {
                                     fontSize={{ lg: 'md', xl: "lg" }}
                                 >
                                     <Flex>
-                                        <Center width='25px'><FontAwesomeIcon icon={faReact} fontSize='1.5em' /></Center>
+                                    <Center><FontAwesomeIcon icon={faReact} width='27px' height='27px' /></Center>
                                         <Text ml={2}>React</Text>
                                     </Flex>
                                     <Flex>
-                                        <Center width='25px'><FontAwesomeIcon icon={faNodeJs} fontSize='1.5em' /></Center>
+                                        <Center><FontAwesomeIcon icon={faNodeJs} width='27px' height='27px'  /></Center>
                                         <Text ml={2}>Node.js</Text>
                                     </Flex>
                                     <Flex>
-                                        <Center width='25px'><Image src={nextJsIcon}/></Center>
+                                        <Center><Image src={nextJsIcon} width='27px' height='27px' /></Center>
                                         <Text ml={2}>Next.js</Text>
                                     </Flex>
                                     <Flex>
-                                        <Center width='25px'><FontAwesomeIcon icon={faJsSquare} fontSize='1.5em' /></Center>
+                                        <Center><FontAwesomeIcon icon={faJsSquare} width='27px' height='27px'  /></Center>
                                         <Text ml={2}>JavaSciprt</Text>
                                     </Flex>
                                     <Flex>
-                                        <Center width='25px'><FontAwesomeIcon icon={faHtml5} fontSize='1.5em' /></Center>
+                                        <Center><FontAwesomeIcon icon={faHtml5} width='27px' height='27px'  /></Center>
                                         <Text ml={2}>HTML5</Text>
                                     </Flex>
                                     <Flex>
-                                        <Center width='25px'><FontAwesomeIcon icon={faCss3Alt} fontSize='1.5em' /></Center>
+                                        <Center><FontAwesomeIcon icon={faCss3Alt} width='27px' height='27px'  /></Center>
                                         <Text ml={2}>CSS3</Text>
                                     </Flex>
 

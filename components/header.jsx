@@ -102,7 +102,7 @@ const Header = forwardRef((props, ref) => {
             >
                 <Button
                     borderRadius='full'
-                    padding={0}
+                    padding='10px'
                     margin={0}
                     sizes={['40px', '40px', '50px', '50px']}
                     fontSize={['15px', '15px', '25px', '25px']}

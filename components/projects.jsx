@@ -33,7 +33,7 @@ const Projects = forwardRef((props, ref) => {
     const hairSalon = '/images/portfolio/hairsalon.jpg';
 
     const handleViewProject = (e) => {
-        setCurrentPage(e);        
+        setCurrentPage(e);
         handlePageTop();
     }
 
@@ -126,20 +126,20 @@ const Projects = forwardRef((props, ref) => {
                                             fontSize={{ md: 'md', lg: 'md', xl: "lg" }}
                                             mb={{ base: 2, sm: 0 }}
                                         >
-                                            <Center w='2rem' mx={1}>
-                                                <FontAwesomeIcon icon={faReact} fontSize='2em' />
+                                            <Center mx={1}>
+                                                <FontAwesomeIcon icon={faReact} width="35px" height="35px" />
                                             </Center>
-                                            <Center w='2rem' mx={1}>
-                                                <FontAwesomeIcon icon={faNodeJs} fontSize='2em' />
+                                            <Center mx={1}>
+                                                <FontAwesomeIcon icon={faNodeJs} width="35px" height="35px" />
                                             </Center>
-                                            <Center w='2rem' mx={1}>
-                                                <FontAwesomeIcon icon={faJsSquare} fontSize='2em' />
+                                            <Center mx={1}>
+                                                <FontAwesomeIcon icon={faJsSquare} width="35px" height="35px" />
                                             </Center>
-                                            <Center w='2rem' mx={1}>
-                                                <FontAwesomeIcon icon={faHtml5} fontSize='2em' />
+                                            <Center mx={1}>
+                                                <FontAwesomeIcon icon={faHtml5} width="35px" height="35px" />
                                             </Center>
-                                            <Center w='2rem' mx={1}>
-                                                <FontAwesomeIcon icon={faCss3Alt} fontSize='2em' />
+                                            <Center mx={1}>
+                                                <FontAwesomeIcon icon={faCss3Alt} width="35px" height="35px" />
                                             </Center>
                                         </Flex>
                                         <Spacer />
