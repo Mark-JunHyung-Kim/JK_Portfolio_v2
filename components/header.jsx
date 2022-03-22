@@ -102,10 +102,10 @@ const Header = forwardRef((props, ref) => {
             >
                 <Button
                     borderRadius='full'
-                    padding='10px'
                     margin={0}
-                    sizes={['40px', '40px', '50px', '50px']}
-                    fontSize={['15px', '15px', '25px', '25px']}
+                    p={[3, 3, 2.5, 2.5]}
+                    width='40px'
+                    height='40px'
                     borderWidth='2px'
                     borderColor='blackAlpha.700'
                     colorScheme='whiteAlpha'
@@ -113,9 +113,8 @@ const Header = forwardRef((props, ref) => {
                     onClick={handlePageTop}
                     className='toTopButton'
                 >
-                    <FontAwesomeIcon
-                        icon={faAnglesUp}
-                    />
+                    <FontAwesomeIcon icon={faAnglesUp} width='25px' height='25px' />
+
                 </Button>
             </Box>
 
