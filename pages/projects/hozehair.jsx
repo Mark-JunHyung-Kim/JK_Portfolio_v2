@@ -370,7 +370,7 @@ const Hozehair = forwardRef((props, ref) => {
                                 overflowWrap="break-word"
                                 pb={{ base: 5, lg: 10 }}
                             >
-                                &nbsp;Like the projects I've worked on before,
+                                &nbsp;Like the projects I`&apos;ve worked on before,
                                 I decided to build this one based on React.
                                 This is because the component-based structure was thought to be easy to describe the structure of the website                                 in detail.
                                 <br /><br />
@@ -423,7 +423,7 @@ const Hozehair = forwardRef((props, ref) => {
                                 It was very interesting to link pages and create a structure through the new routing technology,
                                 but I found that sending and receiving data directly between pages was very complicated, unlike in normal Node.js.
                                 <br /><br />
-                                &nbsp;Also, I've been experiencing a lot of compilation errors for a while because of the structural changes
+                                &nbsp;Also, I`&apos;ve been experiencing a lot of compilation errors for a while because of the structural changes
                                 that come with using Next.js.
                                 I found out that the method of using the state between the main pages
                                 and the sub pages is different due to the case of going through index.js once more in the course of routing.
