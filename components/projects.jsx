@@ -210,7 +210,7 @@ const Projects = forwardRef((props, ref) => {
                                     <Text fontSize={{ base: 'sm', md: 'md', lg: 'sm', xl: 'md' }} my={5}>
                                         This project is a homepage for the introduction and reservation of the Hoze Hair Salon Shop.
                                         <br /><br />
-                                        Through the website, customers can check information about shops and services and make reservations. All websites are built with a fully responsive design.
+                                        This website is a fully responsive design with features for information, services and reservations of the shop.
                                     </Text>
                                     <Spacer />
                                     <Flex direction={{ base: 'column', sm: 'row' }}>
