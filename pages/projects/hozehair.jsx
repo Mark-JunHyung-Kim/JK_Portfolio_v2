@@ -105,7 +105,7 @@ const Hozehair = forwardRef((props, ref) => {
                                 Project <b>Hoze Hair</b> by Mark Kim
                             </Text>
                             <Heading w={{ base: 'full', sm: '80%' }} size="xl" pb={5}>
-                                Hoze Hair Salon Website
+                                Hoze Hair Website
                             </Heading>
 
                             <Text
