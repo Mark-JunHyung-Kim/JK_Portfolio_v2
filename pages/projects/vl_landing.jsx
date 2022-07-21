@@ -37,16 +37,6 @@ import { EffectFade, Navigation, Pagination, Autoplay } from 'swiper';
 
 import { motion } from 'framer-motion';
 
-
-
-// next.js이동하면서 이미지 전부 const로 변경
-// import res_img from '../../images/portfolio/vl_responsive.png';
-// import objectives from '../../images/portfolio/objectives.png';
-// import icons from '../../images/portfolio/icons.png';
-// import c1 from '../../images/portfolio/c1.png';
-// import c2 from '../../images/portfolio/c2.png';
-// import c3 from '../../images/portfolio/c3.png';
-
 const Vl_landing = forwardRef((props, ref) => {
 
     const { setRoutePage } = props;
@@ -58,12 +48,12 @@ const Vl_landing = forwardRef((props, ref) => {
 
     const { handleCurrentPage } = props;
 
-    const res_img = '/images/portfolio/vl_responsive.png';
-    const objectives = '/images/portfolio/objectives.png';
-    const icons = '/images/portfolio/icons.png';
-    const c1 = '/images/portfolio/c1.png';
-    const c2 = '/images/portfolio/c2.png';
-    const c3 = '/images/portfolio/c3.png';
+    const res_img = '/images/portfolio_vl_landing/vl_responsive.png';
+    const objectives = '/images/portfolio_vl_landing/objectives.png';
+    const icons = '/images/portfolio_vl_landing/icons.png';
+    const c1 = '/images/portfolio_vl_landing/c1.png';
+    const c2 = '/images/portfolio_vl_landing/c2.png';
+    const c3 = '/images/portfolio_vl_landing/c3.png';
 
     return (
         <motion.div

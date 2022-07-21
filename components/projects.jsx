@@ -29,8 +29,13 @@ const Projects = forwardRef((props, ref) => {
     const [p1Switch, setP1Switch] = useState(false);
     const [p2Switch, setP2Switch] = useState(false);
 
-    const testImg = '/images/portfolio/vl_landing.gif';
-    const hairSalon = '/images/portfolio/hairsalon.jpg';
+    const snap_vl_landing = '/images/portfolio_vl_landing/vl_landing_01.jpg';
+    const gif_vl_landing = '/images/portfolio_vl_landing/vl_landing.gif';
+
+    const snap_hozehair = '/images/portfolio_hozehair/snap_hozehair.jpg';
+    const gif_hozehair = '/images/portfolio_hozehair/gif_hozehair.gif';
+
+    const nextJsIcon = '/images/next-js.svg';
 
     const handleViewProject = (e) => {
         setCurrentPage(e);
@@ -92,7 +97,7 @@ const Projects = forwardRef((props, ref) => {
                                 className="portfolio_items"
                             >
                                 <Box h={{ base: '200px', md: "420px", lg: '350px' }} zIndex='0'>
-                                    <Image w="full" h="full" src={p1Switch ? testImg : '/images/portfolio/vl_landing_01.jpg'}
+                                    <Image w="full" h="full" src={p1Switch ? gif_vl_landing : snap_vl_landing}
                                         objectFit="cover"
                                         className={p1Switch ? 'img_transition_on' : 'img_transition_off'}
 
@@ -183,9 +188,10 @@ const Projects = forwardRef((props, ref) => {
                                 className="portfolio_items"
                             >
                                 <Box h={{ base: '200px', md: "420px", lg: '350px' }} zIndex='0' overflow='hidden'>
-                                    <Image w='full' h="full"
-                                        src={hairSalon}
-                                        objectFit="cover" />
+                                    <Image w="full" h="full" src={p2Switch ? gif_hozehair : snap_hozehair}
+                                        objectFit="cover"
+                                        className={p2Switch ? 'img_transition_on' : 'img_transition_off'}
+                                    />
                                 </Box>
                                 <Flex
                                     direction="column"
@@ -196,15 +202,15 @@ const Projects = forwardRef((props, ref) => {
                                     p={5}
                                     zIndex='1'
                                 >
-                                    <Text fontSize={{ base: 'sm', md: 'lg', lg: 'md', xl: 'xl' }} fontWeight='semibold'>Ho-Jae Hair Salon.</Text>
+                                    <Text fontSize={{ base: 'sm', md: 'lg', lg: 'md', xl: 'xl' }} fontWeight='semibold'>Hair Salon Website.</Text>
                                     <Heading fontSize={{ base: '2xl', md: '3xl', lg: '2xl', xl: '4xl' }} >
-                                        Hair Salon Webpage
+                                        Hoze Hair Salon
                                     </Heading>
                                     <Spacer />
                                     <Text fontSize={{ base: 'sm', md: 'md', lg: 'sm', xl: 'md' }} my={5}>
-                                        This project is a website for introducing and making reservations for hair salons in Vancouver.
-                                        <br /><br /><br />
-                                        (Currently Working in Progress)
+                                        This project is a homepage for the introduction and reservation of the Hoze Hair Salon Shop.
+                                        <br /><br />
+                                        Through the website, customers can check information about shops and services and make reservations. All websites are built with a fully responsive design.
                                     </Text>
                                     <Spacer />
                                     <Flex direction={{ base: 'column', sm: 'row' }}>
@@ -215,21 +221,22 @@ const Projects = forwardRef((props, ref) => {
                                             fontSize={{ md: 'md', lg: 'md', xl: "lg" }}
                                             mb={{ base: 2, sm: 0 }}
                                         >
-                                            {/*  <Center w='3rem' px={2}>
-                                                <FontAwesomeIcon icon={faReact} fontSize='2em' />
+                                            <Center mx={1}>
+                                                <FontAwesomeIcon icon={faReact} width="35px" height="35px" />
                                             </Center>
-                                            <Center w='3rem' px={2}>
-                                                <FontAwesomeIcon icon={faNodeJs} fontSize='2em' />
+                                            <Center mx={1}>
+                                                {/* <FontAwesomeIcon icon={faNodeJs} width="35px" height="35px" /> */}
+                                                <Image src={nextJsIcon} width='35px' height='35px' />
                                             </Center>
-                                            <Center w='3rem' px={2}>
-                                                <FontAwesomeIcon icon={faJsSquare} fontSize='2em' />
+                                            <Center mx={1}>
+                                                <FontAwesomeIcon icon={faJsSquare} width="35px" height="35px" />
                                             </Center>
-                                            <Center w='3rem' px={2}>
-                                                <FontAwesomeIcon icon={faHtml5} fontSize='2em' />
+                                            <Center mx={1}>
+                                                <FontAwesomeIcon icon={faHtml5} width="35px" height="35px" />
                                             </Center>
-                                            <Center w='3rem' px={2}>
-                                                <FontAwesomeIcon icon={faCss3Alt} fontSize='2em' />
-                                            </Center> */}
+                                            <Center mx={1}>
+                                                <FontAwesomeIcon icon={faCss3Alt} width="35px" height="35px" />
+                                            </Center>
                                         </Flex>
                                         <Spacer />
 
@@ -238,11 +245,12 @@ const Projects = forwardRef((props, ref) => {
                                             alignItems='center'
                                         >
                                             <Spacer />
-                                            {/* <NextRouter to="/works/"> */}
-                                            <Button colorScheme='blue' bgColor='blue.900' m={1} disabled>
-                                                In Progress..
-                                            </Button>
-                                            {/* </NextRouter> */}
+                                            <NextLink href='/projects/hozehair' scroll={false} passHref>
+                                                <Button colorScheme='blue' bgColor='blue.900' m={1} onClick={(e) => { handleViewProject(1) }} className='buttons'>
+                                                    {buttonName}
+                                                </Button>
+                                            </NextLink>
+
                                         </Flex>
                                     </Flex>
                                 </Flex>
