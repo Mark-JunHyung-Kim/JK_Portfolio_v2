@@ -273,7 +273,7 @@ const Hozehair = forwardRef((props, ref) => {
                                 </Swiper>
                             </Flex>
                             <Box alignSelf="center">
-                                <a href="https://hozehair-v1.vercel.app/" target="_blank" rel='noreferrer'>
+                                <a href="https://www.hozehair.ca/" target="_blank" rel='noreferrer'>
                                     <Button colorScheme="blue" bgColor="blue.900" m={1}>
                                         <LinkIcon />
                                         &nbsp;Visit Project
