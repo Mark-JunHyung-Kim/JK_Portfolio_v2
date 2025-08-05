@@ -62,7 +62,7 @@ const Intro = () => {
                             mt={5}
                             p={2}
                         >
-                            <a href='https://drive.google.com/file/d/1KbYFZz2TpdXRM4sVeSPoIlIxWpCm7Dlb/view?usp=sharing' target='_blank'  rel='noreferrer'>
+                            <a href='https://drive.google.com/file/d/1ahfacTlVlqeKs9P1mY8dP6N3hkj25f8K/view?usp=drive_link' target='_blank'  rel='noreferrer'>
                                 <Button size='sm' borderRadius="full" variant='solid' colorScheme='blue'>{viewResume}</Button>
                             </a>
                         </Box>
