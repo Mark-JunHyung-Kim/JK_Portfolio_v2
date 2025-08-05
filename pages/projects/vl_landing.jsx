@@ -1,29 +1,29 @@
-import { useEffect, forwardRef } from 'react';
 import {
+    Box,
+    Button,
+    Center,
     Container,
     Flex,
-    Box,
-    Text,
-    Heading,
     Grid,
-    Center,
+    Heading,
     Image,
-    Button,
     Spacer,
+    Text,
 } from '@chakra-ui/react';
+import { forwardRef, useEffect } from 'react';
 
 import Head from 'next/head';
 
 import { LinkIcon } from '@chakra-ui/icons';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-    faJsSquare,
-    faReact,
-    faNodeJs,
-    faHtml5,
     faCss3Alt,
+    faHtml5,
+    faJsSquare,
+    faNodeJs,
+    faReact,
 } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // for carousel image slide function
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -33,7 +33,7 @@ import 'swiper/css/effect-fade';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import { EffectFade, Navigation, Pagination, Autoplay } from 'swiper';
+import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
 
 import { motion } from 'framer-motion';
 
@@ -461,14 +461,20 @@ const Vl_landing = forwardRef((props, ref) => {
                                 modules={[Autoplay, EffectFade, Navigation, Pagination]}
                                 className="mySwiper"
                             >
-                                <SwiperSlide align="center">
-                                    <Image w={{ base: '80%', lg: '80%' }} src={c1} my={10} />
+                                <SwiperSlide>
+                                    <Box align="center">
+                                        <Image w={{ base: '80%', lg: '80%' }} src={c1} my={10} />
+                                    </Box>
                                 </SwiperSlide>
-                                <SwiperSlide align="center">
-                                    <Image w={{ base: '80%', lg: '80%' }} src={c2} my={10} />
+                                <SwiperSlide>
+                                    <Box align="center">
+                                        <Image w={{ base: '80%', lg: '80%' }} src={c2} my={10} />
+                                    </Box>
                                 </SwiperSlide>
-                                <SwiperSlide align="center">
-                                    <Image w={{ base: '80%', lg: '80%' }} src={c3} my={10} />
+                                <SwiperSlide>
+                                    <Box align="center">
+                                        <Image w={{ base: '80%', lg: '80%' }} src={c3} my={10} />
+                                    </Box>
                                 </SwiperSlide>
                             </Swiper>
 

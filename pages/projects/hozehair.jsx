@@ -1,29 +1,28 @@
-import { useEffect, forwardRef } from 'react';
 import {
+    Box,
+    Button,
+    Center,
     Container,
     Flex,
-    Box,
-    Text,
-    Heading,
     Grid,
-    Center,
+    Heading,
     Image,
-    Button,
     Spacer,
+    Text,
 } from '@chakra-ui/react';
+import { forwardRef, useEffect } from 'react';
 
 import Head from 'next/head';
 
 import { LinkIcon } from '@chakra-ui/icons';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-    faJsSquare,
-    faReact,
-    faNodeJs,
-    faHtml5,
     faCss3Alt,
+    faHtml5,
+    faJsSquare,
+    faReact
 } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // for carousel image slide function
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -33,7 +32,7 @@ import 'swiper/css/effect-fade';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import { EffectFade, Navigation, Pagination, Autoplay } from 'swiper';
+import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules';
 
 import { motion } from 'framer-motion';
 
