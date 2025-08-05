@@ -252,7 +252,7 @@ const Vl_landing = forwardRef((props, ref) => {
                             </Box>
                             <Box alignSelf="center">
                                 <a href="https://vancouver-life.ca/" target="_blank" rel='noreferrer'>
-                                    <Button colorScheme="blue" bgColor="blue.900" m={1}>
+                                    <Button colorScheme="blue" bgColor="blue.900" m={1} disabled={true}>
                                         <LinkIcon />
                                         &nbsp;Visit Project
                                     </Button>

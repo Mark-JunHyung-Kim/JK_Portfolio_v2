@@ -76,96 +76,7 @@ const Projects = forwardRef((props, ref) => {
                     templateColumns={{ base: 'repeat(1, 1fr)', lg: 'repeat(2, 1fr)' }}
                     gap={5}
                 >
-                    {/* 반응형 카드 높이 조절 */}
-                    <GridItem w='full' h='full' p={{ base: '5', lg: '5' }}>
-                        <Box minH='full'
-                            onMouseOver={(e) => { setP1Switch(true) }}
-                            // onMouseOver={(e) => { setP1Switch(p1Switch => !p1Switch) }}
-                            // onMouseDown={(e) => { setP1Switch(p1Switch => !p1Switch) }}
-                            onMouseLeave={(e) => { setP1Switch(false) }}
-                            className={p1Switch ? 'w_after' : 'w_before'}
-                        >
-                            <Flex
-                                w="full"
-                                h='full'
-                                direction="column"
-                                borderRadius="lg"
-                                borderWidth='2px'
-                                borderColor='gray.200'
-                                overflow="hidden"
-                                boxShadow='xl'
-                                className="portfolio_items"
-                            >
-                                <Box h={{ base: '200px', md: "420px", lg: '350px' }} zIndex='0'>
-                                    <Image w="full" h="full" src={p1Switch ? gif_vl_landing : snap_vl_landing}
-                                        objectFit="cover"
-                                        className={p1Switch ? 'img_transition_on' : 'img_transition_off'}
-
-                                    />
-                                </Box>
-                                <Flex
-                                    direction="column"
-                                    // h="full"
-                                    h={{ base: '380px', md: '300px', xl: '350px' }}
-                                    bg="white"
-                                    textAlign="left"
-                                    p={5}
-                                    zIndex='1'
-                                >
-                                    <Text fontSize={{ base: 'sm', md: 'lg', lg: 'md', xl: 'xl' }} fontWeight='semibold'>Project Vancouver Life App.</Text>
-                                    <Heading fontSize={{ base: '2xl', md: '3xl', lg: '2xl', xl: '4xl' }} >
-                                        Landing Page
-                                    </Heading>
-                                    <Spacer />
-                                    <Text fontSize={{ base: 'sm', md: 'md', lg: 'sm', xl: 'md' }} my={5}>
-                                        Vancouver Life, an application for the Vancouver Korean community, is a multi-purpose mobile application.
-                                        <br /><br />
-                                        This landing page is a guide area for new users and introduces various functions supported by the application.
-                                    </Text>
-                                    <Spacer />
-                                    <Flex direction={{ base: 'column', sm: 'row' }}>
-                                        <Flex
-                                            flexWrap="wrap"
-                                            justifyContent={{ base: 'center', lg: 'center' }}
-                                            alignContent={{ base: 'center', lg: 'center' }}
-                                            fontSize={{ md: 'md', lg: 'md', xl: "lg" }}
-                                            mb={{ base: 2, sm: 0 }}
-                                        >
-                                            <Center mx={1}>
-                                                <FontAwesomeIcon icon={faReact} width="35px" height="35px" />
-                                            </Center>
-                                            <Center mx={1}>
-                                                <FontAwesomeIcon icon={faNodeJs} width="35px" height="35px" />
-                                            </Center>
-                                            <Center mx={1}>
-                                                <FontAwesomeIcon icon={faJsSquare} width="35px" height="35px" />
-                                            </Center>
-                                            <Center mx={1}>
-                                                <FontAwesomeIcon icon={faHtml5} width="35px" height="35px" />
-                                            </Center>
-                                            <Center mx={1}>
-                                                <FontAwesomeIcon icon={faCss3Alt} width="35px" height="35px" />
-                                            </Center>
-                                        </Flex>
-                                        <Spacer />
-
-                                        <Flex
-                                            direction="column"
-                                            alignItems='center'
-                                        >
-                                            <Spacer />
-                                            <NextLink href='/projects/vl_landing' scroll={false} passHref>
-                                                <Button colorScheme='blue' bgColor='blue.900' m={1} onClick={(e) => { handleViewProject(1) }} className='buttons'>
-                                                    {buttonName}
-                                                </Button>
-                                            </NextLink>
-
-                                        </Flex>
-                                    </Flex>
-                                </Flex>
-                            </Flex>
-                        </Box>
-                    </GridItem>
+                    {/* 반응형 카드 높이 조절 */}                  
 
                     {/* 2번아이템 */}
                     <GridItem w='full' h='full' p={{ base: '5', lg: '5' }}>
@@ -258,137 +169,96 @@ const Projects = forwardRef((props, ref) => {
                         </Box>
                     </GridItem>
 
+                    <GridItem w='full' h='full' p={{ base: '5', lg: '5' }}>
+                        <Box minH='full'
+                            onMouseOver={(e) => { setP1Switch(true) }}
+                            // onMouseOver={(e) => { setP1Switch(p1Switch => !p1Switch) }}
+                            // onMouseDown={(e) => { setP1Switch(p1Switch => !p1Switch) }}
+                            onMouseLeave={(e) => { setP1Switch(false) }}
+                            className={p1Switch ? 'w_after' : 'w_before'}
+                        >
+                            <Flex
+                                w="full"
+                                h='full'
+                                direction="column"
+                                borderRadius="lg"
+                                borderWidth='2px'
+                                borderColor='gray.200'
+                                overflow="hidden"
+                                boxShadow='xl'
+                                className="portfolio_items"
+                            >
+                                <Box h={{ base: '200px', md: "420px", lg: '350px' }} zIndex='0'>
+                                    <Image w="full" h="full" src={p1Switch ? gif_vl_landing : snap_vl_landing}
+                                        objectFit="cover"
+                                        className={p1Switch ? 'img_transition_on' : 'img_transition_off'}
 
-                    {/*  <GridItem>
-                        <Flex
-                            minH="600px"
-                            height="full"
-                            direction="column"
-                            borderRadius="lg"
-                            overflow="hidden"
-                            boxShadow="lg"
-                            className="portfolio_items"
-                        >
-                            <Box h='full'>
-                                <Image w='full' h='full' src={testImg} objectFit='cover' />
-                            </Box>
-                            <Flex direction='column' h="full" bg="white" textAlign="left" p={5}>
-                                <Heading mb={2}>Project Name</Heading>
-                                <Text mb={2}>
-                                    This my project, and my project is fucking awesome! This my
-                                    project, and my project is fucking awesome! This my project,
-                                    and my project is fucking awesome!
-                                </Text>
-                                <Spacer />
-                                <Flex direction="row">
-                                    <Flex flexWrap='wrap'>
-                                        <Tag size='md' m={1} colorScheme='cyan' variant='solid'>#React</Tag>
-                                        <Tag size='md' m={1} colorScheme='cyan' variant='solid'>#React</Tag>
-                                        <Tag size='md' m={1} colorScheme='cyan' variant='solid'>#React</Tag>
-                                        <Tag size='md' m={1} colorScheme='cyan' variant='solid'>#React</Tag>
-                                        <Tag size='md' m={1} colorScheme='cyan' variant='solid'>#React</Tag>
-                                        <Tag size='md' m={1} colorScheme='cyan' variant='solid'>#React</Tag>
-                                        <Tag size='md' m={1} colorScheme='cyan' variant='solid'>#React</Tag>
-                                        <Tag size='md' m={1} colorScheme='cyan' variant='solid'>#React</Tag>
-                                    </Flex>
+                                    />
+                                </Box>
+                                <Flex
+                                    direction="column"
+                                    // h="full"
+                                    h={{ base: '380px', md: '300px', xl: '350px' }}
+                                    bg="white"
+                                    textAlign="left"
+                                    p={5}
+                                    zIndex='1'
+                                >
+                                    <Text fontSize={{ base: 'sm', md: 'lg', lg: 'md', xl: 'xl' }} fontWeight='semibold'>Project Vancouver Life App.</Text>
+                                    <Heading fontSize={{ base: '2xl', md: '3xl', lg: '2xl', xl: '4xl' }} >
+                                        Landing Page
+                                    </Heading>
                                     <Spacer />
-                                    <Flex h='full' direction='column' onClick={(e) => { onHomeClick() }} >
+                                    <Text fontSize={{ base: 'sm', md: 'md', lg: 'sm', xl: 'md' }} my={5}>
+                                        Vancouver Life, an application for the Vancouver Korean community, is a multi-purpose mobile application.
+                                        <br /><br />
+                                        This landing page is a guide area for new users and introduces various functions supported by the application.
+                                    </Text>
+                                    <Spacer />
+                                    <Flex direction={{ base: 'column', sm: 'row' }}>
+                                        <Flex
+                                            flexWrap="wrap"
+                                            justifyContent={{ base: 'center', lg: 'center' }}
+                                            alignContent={{ base: 'center', lg: 'center' }}
+                                            fontSize={{ md: 'md', lg: 'md', xl: "lg" }}
+                                            mb={{ base: 2, sm: 0 }}
+                                        >
+                                            <Center mx={1}>
+                                                <FontAwesomeIcon icon={faReact} width="35px" height="35px" />
+                                            </Center>
+                                            <Center mx={1}>
+                                                <FontAwesomeIcon icon={faNodeJs} width="35px" height="35px" />
+                                            </Center>
+                                            <Center mx={1}>
+                                                <FontAwesomeIcon icon={faJsSquare} width="35px" height="35px" />
+                                            </Center>
+                                            <Center mx={1}>
+                                                <FontAwesomeIcon icon={faHtml5} width="35px" height="35px" />
+                                            </Center>
+                                            <Center mx={1}>
+                                                <FontAwesomeIcon icon={faCss3Alt} width="35px" height="35px" />
+                                            </Center>
+                                        </Flex>
                                         <Spacer />
-                                        <NextRouter to='/works/'>
-                                            <Button colorScheme='teal' m={1}>{buttonName}</Button>
-                                        </NextRouter>
+
+                                        <Flex
+                                            direction="column"
+                                            alignItems='center'
+                                        >
+                                            <Spacer />
+                                            <NextLink href='/projects/vl_landing' scroll={false} passHref>
+                                                <Button colorScheme='blue' bgColor='blue.900' m={1} onClick={(e) => { handleViewProject(1) }} className='buttons'>
+                                                    {buttonName}
+                                                </Button>
+                                            </NextLink>
+
+                                        </Flex>
                                     </Flex>
                                 </Flex>
                             </Flex>
-                        </Flex>
+                        </Box>
                     </GridItem>
-                    <GridItem>
-                        <Flex
-                            minH="600px"
-                            height="full"
-                            direction="column"
-                            borderRadius="lg"
-                            overflow="hidden"
-                            boxShadow="lg"
-                            className="portfolio_items"
-                        >
-                            <Box h='full'>
-                                <Image w='full' h='full' src={testImg} objectFit='cover' />
-                            </Box>
-                            <Flex direction='column' h="full" bg="white" textAlign="left" p={5}>
-                                <Heading mb={2}>Landing Page - Vancouver Life App.</Heading>
-                                <Text mb={2}>
-                                    This my project, and my project is fucking awesome! This my
-                                    project, and my project is fucking awesome! This my project,
-                                    and my project is fucking awesome!
-                                </Text>
-                                <Spacer />
-                                <Flex direction="row">
-                                    <Center fontSize='xl'>
-                                        <Circle borderWidth={1} borderColor='blackAlpha.700' bg='white' size='40px' color='blackAlpha.700' fontSize='30px' mx={1}>
-                                            <FontAwesomeIcon icon={faReact} />
-                                        </Circle>
-                                        <Circle borderWidth={1} borderColor='black' bg='white' size='40px' color='black' fontSize='30px' mx={1}>
-                                            <FontAwesomeIcon icon={faReact} />
-                                        </Circle>
-                                        <Circle borderWidth={1} borderColor='black' bg='white' size='40px' color='black' fontSize='30px' mx={1}>
-                                            <FontAwesomeIcon icon={faReact} />
-                                        </Circle>
-                                    </Center>
-                                    <Spacer />
-                                    <Flex h='full' direction='column' onClick={(e) => { onHomeClick() }} >
-                                        <Spacer />
-                                        <NextRouter to='/works/'>
-                                            <Button colorScheme='teal' m={1}>{buttonName}</Button>
-                                        </NextRouter>
-                                    </Flex>
-                                </Flex>
-                            </Flex>
-                        </Flex>
-                    </GridItem>
-                    <GridItem>
-                        <Flex
-                            minH="600px"
-                            height="full"
-                            direction="column"
-                            borderRadius="lg"
-                            overflow="hidden"
-                            boxShadow="lg"
-                            className="portfolio_items"
-                        >
-                            <Box h='full'>
-                                <Image w='full' h='full' src={testImg} objectFit='cover' />
-                            </Box>
-                            <Flex direction='column' h="full" bg="white" textAlign="left" p={5}>
-                                <Heading mb={2}>Project Name</Heading>
-                                <Text mb={2}>
-                                    This my project, and my project is fucking awesome! This my
-                                    project, and my project is fucking awesome! This my project,
-                                    and my project is fucking awesome!
-                                </Text>
-                                <Spacer />
-                                <Flex direction="row">
-                                    <Flex flexWrap='wrap'>
-                                        <Tag size='md' m={1} colorScheme='cyan' variant='solid'>#React</Tag>
-                                        <Tag size='md' m={1} colorScheme='cyan' variant='solid'>#React</Tag>
-                                        <Tag size='md' m={1} colorScheme='cyan' variant='solid'>#React</Tag>
-                                        <Tag size='md' m={1} colorScheme='cyan' variant='solid'>#React</Tag>
-                                        <Tag size='md' m={1} colorScheme='cyan' variant='solid'>#React</Tag>
-                                        <Tag size='md' m={1} colorScheme='cyan' variant='solid'>#React</Tag>
-                                        <Tag size='md' m={1} colorScheme='cyan' variant='solid'>#React</Tag>
-                                        <Tag size='md' m={1} colorScheme='cyan' variant='solid'>#React</Tag>
-                                    </Flex>
-                                    <Spacer />
-                                    <Flex h='full' direction='column' onClick={(e) => { onHomeClick() }} >
-                                        <Spacer />
-                                        <NextRouter to='/works/'>
-                                            <Button colorScheme='teal' m={1}>{buttonName}</Button>
-                                        </NextRouter>
-                                    </Flex>
-                                </Flex>
-                            </Flex>
-                        </Flex>
-                    </GridItem> */}
+
                 </Grid>
             </Flex>
         </Container >
